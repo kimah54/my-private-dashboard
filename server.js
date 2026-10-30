@@ -10,4 +10,3 @@ app.use(express.static(__dirname));
 app.listen(PORT, () => {
     console.log(`Private Vault is locked and running at http://localhost:${PORT}`);
 });
-add server setup
