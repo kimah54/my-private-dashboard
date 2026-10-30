@@ -1,1 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Private Vault</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <!-- The Login Screen -->
+    <div id="login-screen" class="container">
+        <h1>Private Access Only</h1>
+        <p>Enter your master password to view your files.</p>
+        <input type="password" id="pass-input" placeholder="Password">
+        <button id="login-btn">Unlock</button>
+    </div>
+
+    <!-- The Dashboard (Hidden until logged in) -->
+    <div id="dashboard-screen" class="container" style="display: none;">
+        <h2>My Files & Apps</h2>
+        <p>Welcome to your secure dashboard.</p>
+        <!-- We will add the file upload and apps here later -->
+    </div>
+
+</body>
+</html>
