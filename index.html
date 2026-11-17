@@ -3,25 +3,250 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Private Vault</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Our Company | Professional Services</title>
+    <style>
+        :root {
+            --brand-color: #00e5ff;
+            --bg-dark: #0a0f16;
+            --card-bg: #111827;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 20px;
+            text-align: center;
+            background: radial-gradient(circle at top, #1f2937 0%, var(--bg-dark) 70%);
+            animation: fadeIn 1s ease-in;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            color: var(--brand-color);
+            text-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* What We Include Section */
+        .includes-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s, border-color 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .card.show {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--brand-color);
+            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.1);
+        }
+
+        .card h3 {
+            color: var(--brand-color);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Customer Details Form */
+        .customer-portal {
+            background: var(--card-bg);
+            max-width: 700px;
+            margin: 0 auto 100px auto;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            border-top: 4px solid var(--brand-color);
+        }
+
+        .customer-portal h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .input-group {
+            margin-bottom: 25px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .input-group input, .input-group textarea {
+            width: 100%;
+            padding: 15px;
+            background: var(--bg-dark);
+            border: 1px solid #374151;
+            color: white;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus, .input-group textarea:focus {
+            outline: none;
+            border-color: var(--brand-color);
+        }
+
+        button {
+            width: 100%;
+            padding: 16px;
+            background: var(--brand-color);
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background: #00b8cc;
+            transform: scale(1.02);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- The Login Screen -->
-    <div id="login-screen" class="container">
-        <h1>Private Access Only</h1>
-        <p>Enter your master password to view your files.</p>
-        <input type="password" id="pass-input" placeholder="Password">
-        <button id="login-btn">Unlock</button>
-    </div>
+    <section class="hero">
+        <h1>Welcome to <span>[Your Company]</span></h1>
+        <p>We build innovative digital experiences. Explore our platform to see exactly what we offer and how we can elevate your next project.</p>
+    </section>
 
-    <!-- The Dashboard (Hidden until logged in) -->
-    <div id="dashboard-screen" class="container" style="display: none;">
-        <h2>My Files & Apps</h2>
-        <p>Welcome to your secure dashboard.</p>
-        <!-- We will add the file upload and apps here later -->
-    </div>
+    <section class="includes-section">
+        <h2 class="section-title">What Our Web Includes</h2>
+        <div class="grid" id="features">
+            <div class="card">
+                <h3>High-End 3D Animation</h3>
+                <p>Fully rendered scene-by-scene visual storyboards with precise camera motion and environmental lighting.</p>
+            </div>
+            <div class="card">
+                <h3>Custom Web Tools</h3>
+                <p>Locally hosted HTML, CSS, and JavaScript utilities designed for high performance and clean architecture.</p>
+            </div>
+            <div class="card">
+                <h3>Secure Data Management</h3>
+                <p>Client-side encryption and IndexedDB persistence ensuring all your project files remain strictly confidential.</p>
+            </div>
+        </div>
+    </section>
 
+    <section class="customer-portal">
+        <h2>Submit Customer Details</h2>
+        <form id="contactForm">
+            <div class="input-group">
+                <label>Full Name / Company</label>
+                <input type="text" placeholder="Enter your name" required>
+            </div>
+            <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="contact@domain.com" required>
+            </div>
+            <div class="input-group">
+                <label>Project Requirements</label>
+                <textarea rows="4" placeholder="Tell us what you need built..." required></textarea>
+            </div>
+            <button type="submit">Submit Details</button>
+        </form>
+    </section>
+
+    <script>
+        // Scroll Animation for Feature Cards
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('show');
+                    }, index * 200);
+                }
+            });
+        });
+
+        document.querySelectorAll('.card').forEach(card => observer.observe(card));
+
+        // Form Animation
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            btn.innerText = "Encrypting & Sending...";
+            btn.style.background = "#374151";
+            btn.style.color = "#fff";
+            
+            setTimeout(() => {
+                btn.innerText = "Details Received ✓";
+                btn.style.background = "#10b981"; // Success Green
+                
+                setTimeout(() => {
+                    e.target.reset();
+                    btn.innerText = "Submit Details";
+                    btn.style.background = "var(--brand-color)";
+                    btn.style.color = "#000";
+                }, 3000);
+            }, 1500);
+        });
+    </script>
 </body>
 </html>
